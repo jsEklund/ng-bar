@@ -1,0 +1,329 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: 'Open Sans Condensed', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+[class*="fa-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+
+}
+
+.header {
+  background-color: #222;
+  box-shadow: 0 2px 3px rgba(34, 34, 34, .2);
+  color: #f5f5f5;
+  font-size: 1rem;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+  .header a {
+    color: #f5f5f5;
+    text-decoration: none;
+  }
+
+    .header a:hover {
+      color: #666;
+    }
+
+    .logo:before {
+      font-size: 1.3em;
+      margin-right: .6em;
+    }
+
+.search {
+  background-color: #222;
+  color: #f5f5f5;
+  padding: 90px 0 40px;
+}
+
+  .search form {
+    display: block;
+    position: relative;
+  }
+
+button {
+  cursor: pointer;
+}
+
+input[type="search"] {
+  background: #f5f5f5;
+  border: 0;
+  border-radius: 3px;
+  color: #222;
+  font-size: 1.5em;
+  outline: 0;
+  padding: 10px 40px 10px 0;
+  text-indent: 20px;
+  width: 100%;
+}
+
+  @media (max-width: 750px) {
+    input[type="search"] {
+      font-size: 1.3em;
+      padding: 8px 35px 8px 0;
+      text-indent: 15px;
+    }
+  }
+
+button[type="submit"] {
+  border: 0;
+  color: #222;
+  font-size: 1.3em;
+  height: 100%;
+  opacity: .7;
+  outline: 0;
+  padding: 0 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+  @media (max-width: 750px) {
+    button[type="submit"] {
+      padding: 0 15px;
+    }
+  }
+
+  button[type="submit"]:focus {
+    color: #000;
+    opacity: 1;
+  }
+
+input[type="search"]:focus + button[type="submit"] {
+  opacity: 1;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1100px;
+  width: 90%;
+}
+
+.container {
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.search + .container {
+  margin-top: 40px;
+  padding-top: 0;
+}
+
+.items {
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+  .items.list {
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  }
+
+  .item figure {
+    margin: 0;
+  }
+
+  /*
+   * List styling for items
+   */
+
+  .list .item {
+    border-bottom: 1px solid #f5f5f5;
+    height: 128px;
+    padding: 4px 0;
+    position: relative;
+  }
+
+    .list .item:hover {
+      background: #f5f5f5;
+    }
+
+    .list .item > * {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .list .item figure {
+      height: 120px;
+      width: 130px;
+    }
+
+      .list .item figure img {
+        height: 120px;
+        left: 5px;
+        margin-top: -60px;
+        position: absolute;
+        top: 50%;
+        width: auto;
+      }
+
+    .list .item .summary {
+      font-size: .8rem;
+      width: calc(100% - 130px);
+    }
+
+    .list .item .title {
+      margin: 15px 0 0;
+    }
+
+    .list .item .category,
+    .list .item .price,
+    .list .item .description {
+      display: block;
+    }
+
+    .list .item .price {
+      font-weight: bold;
+    }
+
+    .list .add-to-cart {
+      border-radius: 50%;
+      font-size: 0;
+      height: 60px;
+      line-height: 60px;
+      margin: -30px 0 0;
+      padding: 0;
+      position: absolute;
+      right: 30px;
+      text-align: center;
+      top: 50%;
+      width: 60px;
+    }
+
+    .list .add-to-cart:before {
+      font-size: 1.4rem;
+      line-height: inherit;
+      margin-right: 0;
+    }
+
+  /*
+   * Card styling for items
+   */
+  .cards .item {
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    display: inline-block;
+    font-size: .8rem;
+    margin: 0 15px 20px;
+    position: relative;
+    transition: box-shadow 0.15s ease-in-out;
+    vertical-align: top;
+    width: calc(33.333% - 30px);
+  }
+
+  @media (max-width: 750px) {
+    .cards .item {
+      width: calc(50% - 30px);
+    }
+  }
+
+  .cards .item:hover {
+    box-shadow: 1px 2px 15px rgba(0, 0, 0, .28);
+  }
+
+    .cards .item figure {
+      margin-bottom: 10px;
+    }
+
+      .cards .item figure img {
+        width: 100%;
+      }
+
+    .cards .item .summary {
+      padding: 15px;
+    }
+
+    .cards .item .title {
+      margin: 0;
+    }
+
+    .cards .item .category,
+    .cards .item .description {
+      display: block;
+    }
+
+    .cards .item .price {
+      background: #444;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 0.9em;
+      font-weight: bold;
+      height: 50px;
+      line-height: 50px;
+      position: absolute;
+      right: -14px;
+      text-align: center;
+      top: -14px;
+      width: 50px;
+    }
+
+      .cards .item .price:before {
+        margin-right: 2px;
+      }
+
+.add-to-cart {
+  background: linear-gradient(to bottom, rgb(156, 156, 156) 0%, rgb(140, 140, 140) 100%);
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+  color: #f5f5f5;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin: 10px 0 0;
+  outline: 0;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+  padding: 6px 14px;
+  width: 100%;
+}
+
+  .item:hover .add-to-cart {
+    background: linear-gradient(to bottom, rgba(50, 160, 80, 1) 0%, rgba(60, 150, 80, 1) 100%);
+  }
+
+  .add-to-cart:before {
+    margin-right: 8px;
+  }
+
+  .item:hover .add-to-cart:hover,
+  .add-to-cart:focus {
+    background: linear-gradient(to bottom, rgba(50, 180, 100, 1) 0%, rgba(60, 150, 100, 1) 100%);
+  }
+
+  .add-to-cart:active {
+    background: linear-gradient(to bottom, rgba(55, 160, 100, 1) 0%, rgba(55, 170, 100, 1) 100%);
+    box-shadow: 0 0 9px rgba(0, 0, 0, .3);
+  }
+
+.footer {
+  margin-top: 40px;
+  padding: 40px;
+  text-align: center;
+}
+
+  .footer a {
+    color: #333;
+    text-decoration: none;
+  }
+
+    .footer a:hover {
+      color: #666;
+    }
+
+  .footer [class*="fa-"] {
+    display: inline-block;
+    font-size: 1.6em;
+    margin: 10px .3em 0;
+  }
